@@ -18,3 +18,25 @@ add('butter', 250);
 add('bread', 5);
 add('apple', 2);
 console.log(cart); // import are live connection, it is not copy of export
+// top level await ES 2022
+
+//AWAIT keyword working outside async function - happens only if script type is module
+// console.log('Start fetching');
+// const res = await fetch(`https://jsonplaceholder.typicode.com/posts`);
+// const data = await res.json();
+// console.log(data);
+// console.log('Something');
+
+const getLastPost = async function () {
+  const res = await fetch(`https://jsonplaceholder.typicode.com/posts`);
+  const data = await res.json();
+  console.log(data);
+  return { title: data.at(-1).title, text: data.at(-1).body };
+};
+// const lastPost = getLastPost();
+// console.log(lastPost);
+// Not very clean
+// lastPost.then(last => console.log(last));
+
+const lastPost2 = await getLastPost();
+console.log(lastPost2);
