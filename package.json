@@ -4,16 +4,17 @@
   "description": "Modern JavaScript Development: Modules, Tooling, and Functional",
   "main": "script.js",
   "scripts": {
-    "start": "parcel index.html",
-    "build": "parcel build index.html"
+    "start": "parcel index.html"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "core-js": "^3.22.4",
     "leaflet": "^1.8.0",
     "lodash-es": "^4.17.21"
   },
   "devDependencies": {
     "parcel": "^1.12.3"
   }
+  
 }
