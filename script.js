@@ -4,7 +4,7 @@
 // console.log(price, tq);
 
 // import * as ShoppingCart from './shoppingCart.js';
-
+/*
 //for named imports, use curly braces and same name
 console.log('Importing Module');
 // console.log(shippingCost); // it is a part of shoppingCart.js. It is not a global variable { addtoCart, totalPrice as price, tq }
@@ -40,3 +40,30 @@ const getLastPost = async function () {
 
 const lastPost2 = await getLastPost();
 console.log(lastPost2);
+*/
+
+const ShoppingCart2 = (function () {
+  const cart = [];
+  const shippingCost = 10;
+  const totalPrice = 237;
+  const totalQuantity = 23;
+  const addtoCart = function (product, quantity) {
+    cart.push({ product, quantity });
+    console.log(
+      `${quantity} ${product} added to cart (shipping cost is ${shippingCost})`
+    );
+  };
+  const orderStock = function (product, quantity) {
+    cart.push({ product, quantity });
+    console.log(`${quantity} ${product} ordered from supplier`);
+  };
+  return {
+    addtoCart,
+    cart,
+    totalPrice,
+    totalQuantity,
+  };
+})();
+ShoppingCart2.addtoCart('apples', 4);
+ShoppingCart2.addtoCart('pizza', 2);
+console.log(ShoppingCart2);
