@@ -40,7 +40,7 @@ const getLastPost = async function () {
 
 const lastPost2 = await getLastPost();
 console.log(lastPost2);
-*/
+
 
 const ShoppingCart2 = (function () {
   const cart = [];
@@ -67,3 +67,16 @@ const ShoppingCart2 = (function () {
 ShoppingCart2.addtoCart('apples', 4);
 ShoppingCart2.addtoCart('pizza', 2);
 console.log(ShoppingCart2);
+*/
+
+// commonJS in node js. Here, it will not work
+
+// //EXPORT
+// export.addtoCart = unction (product, quantity) {
+//   cart.push({ product, quantity });
+//   console.log(
+//     `${quantity} ${product} added to cart (shipping cost is ${shippingCost})`
+//   );
+// };
+// //IMPORT
+// const {addtoCart} = require('./shoppingCart.js')
