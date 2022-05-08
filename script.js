@@ -3,8 +3,8 @@
 // addtoCart('bread', 5);
 // console.log(price, tq);
 
-// import * as ShoppingCart from './shoppingCart.js';
-/*
+import * as ShoppingCart from './shoppingCart.js';
+
 //for named imports, use curly braces and same name
 console.log('Importing Module');
 // console.log(shippingCost); // it is a part of shoppingCart.js. It is not a global variable { addtoCart, totalPrice as price, tq }
@@ -19,7 +19,7 @@ add('bread', 5);
 add('apple', 2);
 console.log(cart); // import are live connection, it is not copy of export
 // top level await ES 2022
-
+/*
 //AWAIT keyword working outside async function - happens only if script type is module
 // console.log('Start fetching');
 // const res = await fetch(`https://jsonplaceholder.typicode.com/posts`);
@@ -80,8 +80,8 @@ console.log(ShoppingCart2);
 // };
 // //IMPORT
 // const {addtoCart} = require('./shoppingCart.js')
-import cloneDeep from './node_modules/lodash-es/cloneDeep.js';
-
+// import cloneDeep from './node_modules/lodash-es/cloneDeep.js';
+import cloneDeep from 'lodash-es'; //works when biuilding with parcel
 const state = {
   cart: [
     {
@@ -97,3 +97,8 @@ const stateDeepClone = cloneDeep(state);
 state.user.loggedIn = false;
 console.log(stateClone);
 console.log(stateDeepClone);
+
+// don't reload whole page, just inject changes - parcel will understand this
+if (module.hot) {
+  module.hot.accept();
+}
