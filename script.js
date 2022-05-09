@@ -102,11 +102,17 @@ console.log(stateDeepClone);
 if (module.hot) {
   module.hot.accept();
 }
-// class Person {
-//   greeting = 'Hey';
-//   constructor(name) {
-//     this.name = name;
-//     console.log(`${this.greeting}, ${this.name}`);
-//   }
-// }
+class Person {
+  greeting = 'Hey';
+  constructor(name) {
+    this.name = name;
+    console.log(`${this.greeting}, ${this.name}`);
+  }
+}
+const jonas = new Person('jonas');
+console.log('jonas' ?? null);
+console.log(cart.find(c => c.quantity >= 2));
+Promise.resolve('TEST').then(x => console.log(x));
 import 'core-js/stable';
+//Polyfilling async functions
+import 'regenerator-runtime/runtime';

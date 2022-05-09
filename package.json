@@ -14,6 +14,7 @@
   "author": "Swaraj",
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "^7.17.10",
     "parcel": "^2.5.0"
   },
   "dependencies": {
